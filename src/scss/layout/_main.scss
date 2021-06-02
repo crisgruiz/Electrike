@@ -19,11 +19,18 @@
   margin-top: 2rem;
 }
 
+.info {
+  padding: 0 1rem 0;
+  margin-top: 2rem;
+  font-size: 0.8rem;
+  text-align: justify;
+}
+
 .resume {
   color: $color-textResume;
   background-color: $resume-background;
   padding: 1rem;
-  margin: 2rem 0 4rem;
+  margin: 2rem 0 2rem;
   text-transform: capitalize;
   &__lowPrice {
     margin-bottom: 1rem;
