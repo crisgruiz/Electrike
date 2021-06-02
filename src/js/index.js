@@ -51,7 +51,7 @@ const paintPrices = () => {
   for (let i = 0; i < info.PVPC.length; i++) {
     const prices = parseInt(info.PVPC[i].PCB);
     const correctPrices = prices / 1000;
-    htmlCode += `<p> ${correctPrices} euros/kWh</p>`;
+    htmlCode += `<p> ${correctPrices} €/kWh</p>`;
   }
   prices.innerHTML = htmlCode;
 };

@@ -34,9 +34,9 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+ssh://git@github.com:Adalab/adalab-web-starter-kit.git"
+		"url": "git+ssh://git@github.com:crisgruiz/Electrike.git"
 	},
 	"author": "Cristina González",
 	"license": "MIT",
-	"homepage": "https://github.com/adalab/adalab-web-starter-kit"
+	"homepage": "https://github.com/crisgruiz/Electrike"
 }
