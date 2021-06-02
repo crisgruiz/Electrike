@@ -4,10 +4,8 @@ const arrow = document.querySelector(".js-arrow");
 function changeDropdown() {
   const isClose = container.classList.contains("hidden");
   // close arrow
-
   arrow.classList.remove("changeArrow");
   // close container
-
   container.classList.add("hidden");
   // toggle arrow
   if (isClose) {
