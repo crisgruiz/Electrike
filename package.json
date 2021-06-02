@@ -1,9 +1,10 @@
 {
 	"name": "Electrike",
-	"version": "1.0.1",
-	"description": "Electricity Price",
+	"version": "3.0.1",
+	"description": "Electricity prices",
 	"dependencies": {
-		"browser-sync": "^2.26.12",
+		"bootstrap-icons": "^1.5.0",
+		"browser-sync": "^2.26.14",
 		"del": "^5.1.0",
 		"eslint": "^7.1.0",
 		"gulp": "^4.0.2",
@@ -19,6 +20,7 @@
 		"gulp-sourcemaps": "*",
 		"gulp-uglify-es": "^2.0.0",
 		"gulp-zip": "*",
+		"jquery": "^3.6.0",
 		"run-sequence": "*"
 	},
 	"devDependencies": {
@@ -32,9 +34,9 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+ssh://git@github.com:crisgruiz/Electrike.git"
+		"url": "git+ssh://git@github.com:Adalab/adalab-web-starter-kit.git"
 	},
-	"author": "Cristina",
+	"author": "Cristina González",
 	"license": "MIT",
-	"homepage": "https://github.com/crisgruiz/Electrike"
+	"homepage": "https://github.com/adalab/adalab-web-starter-kit"
 }

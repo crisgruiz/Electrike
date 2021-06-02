@@ -1,7 +1,9 @@
-body {
-  padding: 2rem;
+.hidden {
+  visibility: hidden;
+}
+
+.main {
+  background: rgb(202, 201, 201);
+  width: 100%;
   height: 100vh;
-  background-image: url('../images/bg-adalab.png');
-  background-color: $color-bg;
-  font-family: $font-main;
 }
