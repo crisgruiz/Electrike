@@ -1,6 +1,26 @@
 @import "core/reset";
+@import "core/variables";
 @import "layout/main";
+@import "layout/info";
+@import "layout/dropdown";
 
 html {
   font-size: 100%;
+  padding: 1rem;
+}
+
+.title {
+  width: 100%;
+  padding: 2rem;
+  color: $color-title;
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.line {
+  height: 0.1rem;
+  width: 100%;
+  background-color: $color-title;
 }

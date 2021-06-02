@@ -10,15 +10,27 @@ let year = date.getFullYear();
 let info = null;
 
 const getElectricityPrice = () => {
-  return fetch(
-    `https://api.esios.ree.es/archives/70/download_json?locale=es&date=${year}-${month}-${day}`
-  )
-    .then((response) => response.json())
-    .then((data) => {
-      info = data;
-      paintHours();
-      paintPrices();
-    });
+  if (day < 10) {
+    return fetch(
+      `https://api.esios.ree.es/archives/70/download_json?locale=es&date=${year}-${month}-0${day}`
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        info = data;
+        paintHours();
+        paintPrices();
+      });
+  } else {
+    return fetch(
+      `https://api.esios.ree.es/archives/70/download_json?locale=es&date=${year}-${month}-${day}`
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        info = data;
+        paintHours();
+        paintPrices();
+      });
+  }
 };
 getElectricityPrice();
 
@@ -39,7 +51,7 @@ const paintPrices = () => {
   for (let i = 0; i < info.PVPC.length; i++) {
     const prices = parseInt(info.PVPC[i].PCB);
     const correctPrices = prices / 1000;
-    htmlCode += `<p> ${correctPrices} cént</p>`;
+    htmlCode += `<p> ${correctPrices} euros/kWh</p>`;
   }
   prices.innerHTML = htmlCode;
 };
