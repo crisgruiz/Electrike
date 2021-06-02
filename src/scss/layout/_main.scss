@@ -44,11 +44,11 @@
 
 .table {
   border: 1px solid $tableBorder;
+  text-align: center;
   &__title {
     color: $color-title;
     text-transform: uppercase;
     font-size: 0.8rem;
-    text-align: center;
   }
 }
 .table td {
