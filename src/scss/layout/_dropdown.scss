@@ -18,12 +18,12 @@
 }
 
 .dropdown {
+  background-color: $dropdown-background;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
   border-bottom: 0.1rem solid $infoBorder;
-  cursor: pointer;
   &__title {
     color: $color-title;
     font-size: 1rem;

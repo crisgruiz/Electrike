@@ -10,13 +10,13 @@
   background-color: $resume-background;
   padding: 1rem;
   margin: 1.5rem 0 2rem;
-  text-transform: capitalize;
-  &__lowPrice {
-    margin-bottom: 1rem;
+  p {
+    margin: 0rem;
   }
-  &__highPrice {
-    margin-bottom: 0rem;
-  }
+}
+.priceTitle {
+  font-size: 1.2rem;
+  font-weight: bold;
 }
 
 .prices {
