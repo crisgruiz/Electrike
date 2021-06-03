@@ -26,40 +26,25 @@ const getElectricityPrice = () => {
     })
     .then((hourlyPrices) => {
       paintHours(hourlyPrices);
-      paintPrices(hourlyPrices);
+      paintPricesPCB(hourlyPrices);
+      paintPricesCYM(hourlyPrices);
       paintMinPrice(hourlyPrices);
       paintMaxPrice(hourlyPrices);
     });
 };
 getElectricityPrice();
 
-const infoDetail = document.querySelector(".js-table");
-const hours = document.querySelector(".js-hour");
-const prices = document.querySelector(".js-price");
-const variation = document.querySelector(".js-var");
+const infoDetailPCB = document.querySelector(".js-table");
+const hoursPCB = document.querySelector(".js-hourPCB");
+const pricesPCB = document.querySelector(".js-pricePCB");
+const variationPCB = document.querySelector(".js-varPCB");
+const hoursCYM = document.querySelector(".js-hourCYM");
+const pricesCYM = document.querySelector(".js-priceCYM");
+const variationCYM = document.querySelector(".js-varCYM");
 const lowPrice = document.querySelector(".js-low");
 const highPrice = document.querySelector(".js-high");
 
-const paintHours = (hourlyPrices) => {
-  let htmlCode = "";
-  for (let i = 0; i < hourlyPrices.length; i++) {
-    htmlCode += `<p> ${hourlyPrices[i].hour}</p>`;
-  }
-  hours.innerHTML = htmlCode;
-};
-
-const paintPrices = (hourlyPrices) => {
-  let htmlCode = "";
-  for (let i = 0; i < hourlyPrices.length; i++) {
-    htmlCode += `<p> ${hourlyPrices[i].PCB} €/kWh</p>`;
-  }
-  prices.innerHTML = htmlCode;
-};
-
-const paintNoData = () => {
-  let htmlCode = "Loading";
-  infoDetail.innerHTML = htmlCode;
-};
+//Resume prices
 
 const paintMinPrice = (hourlyPrices) => {
   let htmlCode = "";
@@ -104,4 +89,36 @@ const paintMaxPrice = (hourlyPrices) => {
   htmlCode += `<p class="place">Ceuta y Melilla:</p>`;
   htmlCode += `<p> ${maxElement.hour} -> ${maxElementCYM.CYM} €/kWh</p>`;
   highPrice.innerHTML = htmlCode;
+};
+
+//table with data
+
+const paintHours = (hourlyPrices) => {
+  let htmlCode = "";
+  for (let i = 0; i < hourlyPrices.length; i++) {
+    htmlCode += `<p> ${hourlyPrices[i].hour}</p>`;
+  }
+  hoursPCB.innerHTML = htmlCode;
+  hoursCYM.innerHTML = htmlCode;
+};
+
+const paintPricesPCB = (hourlyPrices) => {
+  let htmlCode = "";
+  for (let i = 0; i < hourlyPrices.length; i++) {
+    htmlCode += `<p> ${hourlyPrices[i].PCB} €/kWh</p>`;
+  }
+  pricesPCB.innerHTML = htmlCode;
+};
+
+const paintPricesCYM = (hourlyPrices) => {
+  let htmlCode = "";
+  for (let i = 0; i < hourlyPrices.length; i++) {
+    htmlCode += `<p> ${hourlyPrices[i].CYM} €/kWh</p>`;
+  }
+  pricesCYM.innerHTML = htmlCode;
+};
+
+const paintNoData = () => {
+  let htmlCode = "Loading";
+  infoDetail.innerHTML = htmlCode;
 };

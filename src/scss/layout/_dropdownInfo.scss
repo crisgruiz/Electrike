@@ -1,0 +1,38 @@
+.dropdowncontainer {
+  overflow: hidden;
+  transition: all 0.5s ease;
+}
+
+.hidden {
+  max-height: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.changeArrow {
+  width: 1rem;
+  height: 1.13rem;
+  font-size: 1.13rem;
+  transform: rotate(180deg);
+  transition: transform 0.5s ease-in-out;
+}
+
+.dropdown {
+  background-color: $dropdown-background;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 0.1rem solid $infoBorder;
+  &__title {
+    color: $color-title;
+    font-size: 1rem;
+    text-transform: capitalize;
+  }
+  &__arrow {
+    width: 1rem;
+    height: 1.13rem;
+    font-size: 1.13rem;
+    transition: transform 0.5s linear;
+  }
+}
