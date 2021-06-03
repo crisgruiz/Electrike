@@ -19,8 +19,8 @@ const getElectricityPrice = () => {
       return data.PVPC.map((x) => {
         return {
           hour: x.Hora,
-          PCB: parseFloat(x.PCB.replace(",", ".")) / 1000,
-          CYM: parseFloat(x.CYM.replace(",", ".")) / 1000,
+          PCB: (parseFloat(x.PCB.replace(",", ".")) / 1000).toFixed(4),
+          CYM: (parseFloat(x.CYM.replace(",", ".")) / 1000).toFixed(4),
         };
       });
     })
