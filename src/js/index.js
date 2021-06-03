@@ -6,20 +6,32 @@ let date = new Date();
 let day = date.getDate();
 let month = date.getMonth() + 1;
 let year = date.getFullYear();
+
 //Llamada al API
 let info = null;
-
 const getElectricityPrice = () => {
   if (day < 10) {
-    return fetch(
-      `https://api.esios.ree.es/archives/70/download_json?locale=es&date=${year}-${month}-0${day}`
-    )
-      .then((response) => response.json())
-      .then((data) => {
-        info = data;
-        paintHours();
-        paintPrices();
-      });
+    if (month < 10) {
+      return fetch(
+        `https://api.esios.ree.es/archives/70/download_json?locale=es&date=${year}-0${month}-0${day}`
+      )
+        .then((response) => response.json())
+        .then((data) => {
+          info = data;
+          paintHours();
+          paintPrices();
+        });
+    } else {
+      return fetch(
+        `https://api.esios.ree.es/archives/70/download_json?locale=es&date=${year}-${month}-0${day}`
+      )
+        .then((response) => response.json())
+        .then((data) => {
+          info = data;
+          paintHours();
+          paintPrices();
+        });
+    }
   } else {
     return fetch(
       `https://api.esios.ree.es/archives/70/download_json?locale=es&date=${year}-${month}-${day}`
