@@ -7,34 +7,36 @@
     <div class="prices">
       <h2 class="prices__title">tabla de precios según horas</h2>
       <div>
-        <h4 class="js-option1">Península, Canarias y Baleares</h4>
-        <table class="table js-table">
-          <tr class="table__title">
-            <td class="table__title--hour">hora</td>
-            <td class="table__title--price">precio</td>
-            <td class="table__title--icon"></td>
-          </tr>
-          <tr>
-            <td class="table__hour js-hourPCB"></td>
-            <td class="table__price js-pricePCB"></td>
-            <td class="table__var js-varPCB"></td>
-          </tr>
-        </table>
-      </div>
-      <div>
-        <h4 class="js-option2">Ceuta y Melilla</h4>
-        <table class="table js-table">
-          <tr class="table__title">
-            <td class="table__title--hour">hora</td>
-            <td class="table__title--price">precio</td>
-            <td class="table__title--icon"></td>
-          </tr>
-          <tr>
-            <td class="table__hour js-hourCYM"></td>
-            <td class="table__price js-priceCYM"></td>
-            <td class="table__var js-varCYM"></td>
-          </tr>
-        </table>
+        <ul class="tabs" id="tabs">
+          <li id="opt1" class="js-options tabs__item active">PCB</li>
+          <li id="opt2" class="js-options tabs__item">CYM</li>
+        </ul>
+        <div class="table">
+          <table id="tab1" class="table__item js-table active">
+            <tr class="table__title">
+              <td class="table__title--hour">hora</td>
+              <td class="table__title--price">precio</td>
+              <td class="table__title--icon"></td>
+            </tr>
+            <tr>
+              <td class="table__hour js-hourPCB"></td>
+              <td class="table__price js-pricePCB"></td>
+              <td class="table__var js-varPCB"></td>
+            </tr>
+          </table>
+          <table id="tab2" class="table__item js-table">
+            <tr class="table__title">
+              <td class="table__title--hour">hora</td>
+              <td class="table__title--price">precio</td>
+              <td class="table__title--icon"></td>
+            </tr>
+            <tr>
+              <td class="table__hour js-hourCYM"></td>
+              <td class="table__price js-priceCYM"></td>
+              <td class="table__var js-varCYM"></td>
+            </tr>
+          </table>
+        </div>
       </div>
     </div>
   </section>
