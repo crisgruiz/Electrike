@@ -1,0 +1,37 @@
+<div class="prices">
+  <h2 class="prices__title">tabla de precios según horas</h2>
+  <p class="prices__info">PCB = Península, Canarias y Baleares</p>
+  <p class="prices__info">CYM = Ceuta y Melilla</p>
+  <div>
+    <ul class="tabs" id="tabs">
+      <li class="tabs__item active">PCB</li>
+      <li class="tabs__item">CYM</li>
+    </ul>
+    <div class="table">
+      <table class="table__item js-table active">
+        <tr class="table__title">
+          <td class="table__title--hour">hora</td>
+          <td class="table__title--price">precio</td>
+          <td class="table__title--icon">variation</td>
+        </tr>
+        <tr>
+          <td class="table__hour js-hourPCB"></td>
+          <td class="table__price js-pricePCB"></td>
+          <td class="table__var js-varPCB"></td>
+        </tr>
+      </table>
+      <table class="table__item js-table">
+        <tr class="table__title">
+          <td class="table__title--hour">hora</td>
+          <td class="table__title--price">precio</td>
+          <td class="table__title--icon">variation</td>
+        </tr>
+        <tr>
+          <td class="table__hour js-hourCYM"></td>
+          <td class="table__price js-priceCYM"></td>
+          <td class="table__var js-varCYM"></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>

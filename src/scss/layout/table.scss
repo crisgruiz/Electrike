@@ -1,0 +1,64 @@
+@import "../core/variables";
+
+.prices {
+  &__title {
+    color: $color-title;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  &__info {
+    color: $color-title;
+    font-size: 0.8rem;
+  }
+}
+
+ul.tabs {
+  width: 100%;
+  list-style: none;
+  display: flex;
+}
+
+.tabs {
+  font-size: 1rem;
+  text-align: center;
+  display: block;
+  border: 1px solid $tableBorder;
+  margin-top: 1.5rem;
+  &__item {
+    width: 100%;
+    padding: 0.5rem;
+    &.active {
+      background: $color-active;
+      color: #fff;
+    }
+  }
+}
+
+.table {
+  border: 1px solid $tableBorder;
+  text-align: center;
+  &__title {
+    color: $color-title;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+  }
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  &__item {
+    display: none;
+    &.active {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
+.table td {
+  padding: 1rem 1rem 0.5rem;
+  border-top: hidden;
+}
