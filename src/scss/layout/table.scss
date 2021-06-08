@@ -1,12 +1,42 @@
 @import "../core/variables";
 
+.resume {
+  color: $color-textResume;
+  background-color: $resume-background;
+  padding: 0.5rem 1.5rem 1rem;
+  margin: 1.5rem 0 2rem;
+  p {
+    margin: 0rem;
+  }
+  &__item {
+    display: none;
+    &.active {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
+p.priceTitle {
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+  margin: 0.5rem 0;
+}
+p.place {
+  font-weight: bold;
+  margin: 0.3rem 0;
+  text-indent: 1rem;
+}
+
 .prices {
   &__title {
     color: $color-title;
     text-transform: uppercase;
     font-size: 1.2rem;
-    margin-bottom: 1rem;
     text-align: center;
+    margin: 1.5rem 0 1rem;
   }
   &__info {
     color: $color-title;

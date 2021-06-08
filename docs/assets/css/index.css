@@ -1,1 +1,65 @@
-*{box-sizing:border-box;margin:0;padding:0}.hidden{visibility:hidden}.main{background:url("../images/background.jpg") no-repeat center/cover fixed;width:100%;height:100vh;padding:30px;display:flex;flex-direction:column;justify-content:start;align-items:center;text-align:center}.main__title{margin:50px 0 20px}.searchContainer__title{margin:0 0 20px}.form__container{justify-content:center;align-items:center}.form__searchBtn{margin:25px 0;height:30px;width:150px;text-transform:uppercase}.pokemonDetail{background-color:black;width:100%;height:calc(100vh - 148px);position:relative;z-index:20;display:flex;flex-direction:column;justify-content:start;align-items:center;text-align:center;font-weight:bold;font-size:20px;margin-top:-150px}.pokemonDetail__card{width:350px}.pokemonDetail__img{width:350px;margin:25px 0;background-color:burlywood;padding:50px;border-radius:50%;border:black solid 1px}.pokemonDetail__type--title{text-transform:capitalize;margin:20px 0 25px}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.hidden {
+  visibility: hidden;
+}
+.main {
+  background: url("../images/background.jpg") no-repeat center/cover fixed;
+  width: 100%;
+  height: 100vh;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  text-align: center;
+}
+.main__title {
+  margin: 50px 0 20px;
+}
+.searchContainer__title {
+  margin: 0 0 20px;
+}
+.form__container {
+  justify-content: center;
+  align-items: center;
+}
+.form__searchBtn {
+  margin: 25px 0;
+  height: 30px;
+  width: 150px;
+  text-transform: uppercase;
+}
+.pokemonDetail {
+  background-color: black;
+  width: 100%;
+  height: calc(100vh - 148px);
+  position: relative;
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+  margin-top: -150px;
+}
+.pokemonDetail__card {
+  width: 350px;
+}
+.pokemonDetail__img {
+  width: 350px;
+  margin: 25px 0;
+  background-color: burlywood;
+  padding: 50px;
+  border-radius: 50%;
+  border: black solid 1px;
+}
+.pokemonDetail__type--title {
+  text-transform: capitalize;
+  margin: 20px 0 25px;
+}
