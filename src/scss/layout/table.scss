@@ -56,7 +56,10 @@ ul.tabs {
   text-align: center;
   display: block;
   border: 1px solid $tableBorder;
-  margin-top: 1.5rem;
+
+  border-bottom: none;
+  margin: 0;
+  background: $tabs-background;
   &__item {
     width: 100%;
     padding: 0.5rem;
@@ -69,6 +72,7 @@ ul.tabs {
 
 .table {
   border: 1px solid $tableBorder;
+  border-top: none;
   text-align: center;
   &__title {
     color: $color-title;
