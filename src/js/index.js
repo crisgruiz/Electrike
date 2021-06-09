@@ -2,12 +2,8 @@
 
 //Current date
 let date = new Date();
-console.log(date);
 let ISOdate = date.toISOString();
-let splitArray = ISOdate.split("");
-let spliceArray = splitArray.splice(0, 10);
-let formatDate = spliceArray.join("");
-console.log(formatDate);
+let formatDate = ISOdate.split("").splice(0, 10).join("");
 
 //Llamada al API
 const getElectricityPrice = () => {

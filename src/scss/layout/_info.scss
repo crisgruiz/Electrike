@@ -1,10 +1,13 @@
+@import "../core/variables";
+@import "../core/mixins";
+
 .info {
   padding: 0 1rem 0;
   margin-top: 2rem;
   font-size: 0.8rem;
-  text-align: justify;
   text-indent: 1rem;
   &__text {
     margin-top: 1rem;
+    text-align: justify;
   }
 }
