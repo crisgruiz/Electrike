@@ -56,7 +56,6 @@ ul.tabs {
   text-align: center;
   display: block;
   border: 1px solid $tableBorder;
-
   border-bottom: none;
   margin: 0;
   background: $tabs-background;
@@ -74,6 +73,7 @@ ul.tabs {
   border: 1px solid $tableBorder;
   border-top: none;
   text-align: center;
+  width: 100%;
   &__title {
     color: $color-title;
     text-transform: uppercase;
@@ -94,6 +94,5 @@ ul.tabs {
   }
 }
 .table td {
-  padding: 1rem 1rem 0.5rem;
   border-top: hidden;
 }
