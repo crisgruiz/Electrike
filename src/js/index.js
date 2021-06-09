@@ -1,57 +1,44 @@
 "use strict";
 
 //Current date
-
-// var dateFormat = require("dateformat");
-// var now = new Date();
-// dateFormat(now, "dddd, mmmm dS, yyyy, h:MM:ss TT");
-
 let date = new Date();
-let day = date.getDate();
-let month = date.getMonth() + 1;
-let year = date.getFullYear();
+console.log(date);
+let ISOdate = date.toISOString();
+let splitArray = ISOdate.split("");
+let spliceArray = splitArray.splice(0, 10);
+let formatDate = spliceArray.join("");
+console.log(formatDate);
 
 //Llamada al API
 const getElectricityPrice = () => {
-  return (
-    fetch(
-      "https://electrike-otkzylkdbx.s3-eu-west-1.amazonaws.com/2021-06-09.json"
-    )
-      .then((response) => response.json())
-      // .then((data) => {
-      //   return data.PVPC.map((x) => {
-      //     return {
-      //       hour: x.Hora,
-      //       PCB: (parseFloat(x.PCB.replace(",", ".")) / 1000).toFixed(4),
-      //       CYM: (parseFloat(x.CYM.replace(",", ".")) / 1000).toFixed(4),
-      //     };
-      //   });
-      // })
-      .then((data) => {
-        const hours = data.pcb.map((x) => x.hour_str);
-        const PCBprices = data.pcb.map((x) => x.price.toFixed(4));
-        const CYMprices = data.cym.map((x) => x.price.toFixed(4));
-        let PVPCdata = [];
-        for (let i = 0; i < hours.length; i++) {
-          let objectElement = {
-            hour: hours[i],
-            PCB: PCBprices[i],
-            CYM: CYMprices[i],
-          };
-          PVPCdata.push(objectElement);
-        }
-        return PVPCdata;
-      })
-      .then((hourlyPrices) => {
-        paintMinPricePCB(hourlyPrices);
-        paintMaxPricePCB(hourlyPrices);
-        paintMinPriceCYM(hourlyPrices);
-        paintMaxPriceCYM(hourlyPrices);
-        paintHours(hourlyPrices);
-        paintPricesPCB(hourlyPrices);
-        paintPricesCYM(hourlyPrices);
-      })
-  );
+  return fetch(
+    `https://electrike-otkzylkdbx.s3-eu-west-1.amazonaws.com/${formatDate}.json`
+  )
+    .then((response) => response.json())
+    .then((data) => {
+      const hours = data.pcb.map((x) => x.hour_str);
+      const PCBprices = data.pcb.map((x) => x.price.toFixed(4));
+      const CYMprices = data.cym.map((x) => x.price.toFixed(4));
+      let PVPCdata = [];
+      for (let i = 0; i < hours.length; i++) {
+        let objectElement = {
+          hour: hours[i],
+          PCB: PCBprices[i],
+          CYM: CYMprices[i],
+        };
+        PVPCdata.push(objectElement);
+      }
+      return PVPCdata;
+    })
+    .then((hourlyPrices) => {
+      paintMinPricePCB(hourlyPrices);
+      paintMaxPricePCB(hourlyPrices);
+      paintMinPriceCYM(hourlyPrices);
+      paintMaxPriceCYM(hourlyPrices);
+      paintHours(hourlyPrices);
+      paintPricesPCB(hourlyPrices);
+      paintPricesCYM(hourlyPrices);
+    });
 };
 getElectricityPrice();
 
