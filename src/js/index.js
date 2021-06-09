@@ -13,26 +13,45 @@ let year = date.getFullYear();
 
 //Llamada al API
 const getElectricityPrice = () => {
-  return fetch("prices.json")
-    .then((response) => response.json())
-    .then((data) => {
-      return data.PVPC.map((x) => {
-        return {
-          hour: x.Hora,
-          PCB: (parseFloat(x.PCB.replace(",", ".")) / 1000).toFixed(4),
-          CYM: (parseFloat(x.CYM.replace(",", ".")) / 1000).toFixed(4),
-        };
-      });
-    })
-    .then((hourlyPrices) => {
-      paintMinPricePCB(hourlyPrices);
-      paintMaxPricePCB(hourlyPrices);
-      paintMinPriceCYM(hourlyPrices);
-      paintMaxPriceCYM(hourlyPrices);
-      paintHours(hourlyPrices);
-      paintPricesPCB(hourlyPrices);
-      paintPricesCYM(hourlyPrices);
-    });
+  return (
+    fetch(
+      "https://electrike-otkzylkdbx.s3-eu-west-1.amazonaws.com/2021-06-09.json"
+    )
+      .then((response) => response.json())
+      // .then((data) => {
+      //   return data.PVPC.map((x) => {
+      //     return {
+      //       hour: x.Hora,
+      //       PCB: (parseFloat(x.PCB.replace(",", ".")) / 1000).toFixed(4),
+      //       CYM: (parseFloat(x.CYM.replace(",", ".")) / 1000).toFixed(4),
+      //     };
+      //   });
+      // })
+      .then((data) => {
+        const hours = data.pcb.map((x) => x.hour_str);
+        const PCBprices = data.pcb.map((x) => x.price.toFixed(4));
+        const CYMprices = data.cym.map((x) => x.price.toFixed(4));
+        let PVPCdata = [];
+        for (let i = 0; i < hours.length; i++) {
+          let objectElement = {
+            hour: hours[i],
+            PCB: PCBprices[i],
+            CYM: CYMprices[i],
+          };
+          PVPCdata.push(objectElement);
+        }
+        return PVPCdata;
+      })
+      .then((hourlyPrices) => {
+        paintMinPricePCB(hourlyPrices);
+        paintMaxPricePCB(hourlyPrices);
+        paintMinPriceCYM(hourlyPrices);
+        paintMaxPriceCYM(hourlyPrices);
+        paintHours(hourlyPrices);
+        paintPricesPCB(hourlyPrices);
+        paintPricesCYM(hourlyPrices);
+      })
+  );
 };
 getElectricityPrice();
 
@@ -70,23 +89,3 @@ const paintPricesCYM = (hourlyPrices) => {
   }
   pricesCYM.innerHTML = htmlCode;
 };
-
-// const tabsItem = Array.prototype.slice.apply(
-//   document.querySelectorAll(".tabs__item")
-// );
-// const tablesItem = Array.prototype.slice.apply(
-//   document.querySelectorAll(".table__item")
-// );
-// const tabs = document.getElementById("tabs");
-
-// const handleClick = (e) => {
-//   if (e.target.classList.contains("tabs__item")) {
-//     let i = tabsItem.indexOf(e.target);
-//     tabsItem.map((tab) => tab.classList.remove("active"));
-//     tabsItem[i].classList.add("active");
-//     tablesItem.map((table) => table.classList.remove("active"));
-//     tablesItem[i].classList.add("active");
-//   }
-// };
-
-// tabs.addEventListener("click", handleClick);
