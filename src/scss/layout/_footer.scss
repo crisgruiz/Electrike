@@ -1,0 +1,33 @@
+@import "../core/core";
+
+.footer {
+  padding: 1rem 4rem 1rem 2rem;
+  font-family: $font-main;
+  border-top: solid 1px $color-lines;
+  background-color: $footer-background;
+  &__container {
+    height: 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    @include tablet() {
+      height: 1.5rem;
+    }
+  }
+
+  &__text {
+    font-size: 1rem;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.43;
+    letter-spacing: normal;
+    &--link {
+      text-decoration: none;
+    }
+    &--icon {
+      text-decoration: none;
+      color: $color-icon;
+    }
+  }
+}

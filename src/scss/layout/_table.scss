@@ -1,5 +1,4 @@
-@import "../core/variables";
-@import "../core/mixins";
+@import "../core/core";
 
 .resume {
   color: $color-textResume;
@@ -52,6 +51,7 @@ ul.tabs {
 }
 
 .tabs {
+  max-height: 25rem;
   font-size: 1rem;
   text-align: center;
   display: block;
@@ -74,6 +74,7 @@ ul.tabs {
   border-top: none;
   text-align: center;
   width: 100%;
+  display: block;
   &__title {
     color: $color-title;
     text-transform: uppercase;
@@ -95,4 +96,9 @@ ul.tabs {
 }
 .table td {
   border-top: hidden;
+}
+tbody {
+  height: 30rem; /* Just for the demo          */
+  overflow-y: auto; /* Trigger vertical scroll    */
+  overflow-x: hidden; /* Hide the horizontal scroll */
 }
