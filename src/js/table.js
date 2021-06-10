@@ -2,6 +2,16 @@ const lowPricePCB = document.querySelector(".js-lowPCB");
 const highPricePCB = document.querySelector(".js-highPCB");
 const lowPriceCYM = document.querySelector(".js-lowCYM");
 const highPriceCYM = document.querySelector(".js-highCYM");
+const priceDate = document.querySelector(".js-date");
+
+//current date
+
+const printDate = () => {
+  let htmlCode = "";
+  htmlCode += `<p class="date__text">Fecha: ${formatDate}</p>`;
+  priceDate.innerHTML = htmlCode;
+};
+printDate();
 
 //Resume prices
 

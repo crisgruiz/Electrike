@@ -1,5 +1,15 @@
 @import "../core/core";
 
+.date {
+  text-align: center;
+  &__text {
+    color: $color-date;
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 1.5rem 0;
+  }
+}
 .resume {
   color: $color-textResume;
   background-color: $resume-background;
