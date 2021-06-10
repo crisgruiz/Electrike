@@ -3,11 +3,8 @@
 .resume {
   color: $color-textResume;
   background-color: $resume-background;
-  padding: 0.5rem 1.5rem 1rem;
-  margin: 1.5rem 0 2rem;
-  p {
-    margin: 0rem;
-  }
+  padding: 1rem 1.5rem;
+  margin-bottom: 2rem;
   &__item {
     display: none;
     &.active {
@@ -26,12 +23,6 @@ p.priceTitle {
   font-size: 1.2rem;
   font-weight: bold;
   text-align: center;
-  margin: 0.5rem 0;
-}
-p.place {
-  font-weight: bold;
-  margin: 0.3rem 0;
-  text-indent: 1rem;
 }
 
 .prices {
@@ -40,16 +31,19 @@ p.place {
     text-transform: uppercase;
     font-size: 1.2rem;
     text-align: center;
-    margin: 1.5rem 0 1rem;
+    margin: 1.5rem 0 1.5rem;
     @include tablet() {
+      font-size: 1.5rem;
       max-width: 40rem;
-      margin: 1.5rem auto 1rem;
+      margin: 1.5rem auto 1.5rem;
     }
   }
   &__info {
     color: $color-title;
     font-size: 0.8rem;
+    text-indent: 1rem;
     @include tablet() {
+      font-size: 1rem;
       max-width: 40rem;
       margin: 1rem auto;
     }
@@ -94,6 +88,7 @@ ul.tabs {
     color: $color-title;
     text-transform: uppercase;
     font-size: 0.8rem;
+    margin: 0;
   }
   &__item {
     display: none;

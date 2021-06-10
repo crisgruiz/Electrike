@@ -51,7 +51,7 @@ const variationCYM = document.querySelector(".js-varCYM");
 const paintHours = (hourlyPrices) => {
   let htmlCode = "";
   for (let i = 0; i < hourlyPrices.length; i++) {
-    htmlCode += `<p> ${hourlyPrices[i].hour}</p>`;
+    htmlCode += `<pclass="table__hour--item"> ${hourlyPrices[i].hour}</p>`;
   }
   hoursPCB.innerHTML = htmlCode;
   hoursCYM.innerHTML = htmlCode;
@@ -60,7 +60,7 @@ const paintHours = (hourlyPrices) => {
 const paintPricesPCB = (hourlyPrices) => {
   let htmlCode = "";
   for (let i = 0; i < hourlyPrices.length; i++) {
-    htmlCode += `<p> ${hourlyPrices[i].PCB} <span class="units">€/kWh</span></p>`;
+    htmlCode += `<p class="table__price--item"> ${hourlyPrices[i].PCB} <span class="units">€/kWh</span></p>`;
   }
   pricesPCB.innerHTML = htmlCode;
 };
@@ -68,7 +68,7 @@ const paintPricesPCB = (hourlyPrices) => {
 const paintPricesCYM = (hourlyPrices) => {
   let htmlCode = "";
   for (let i = 0; i < hourlyPrices.length; i++) {
-    htmlCode += `<p> ${hourlyPrices[i].CYM} <span class="units">€/kWh</span></p>`;
+    htmlCode += `<p class="table__price--item"> ${hourlyPrices[i].CYM} <span class="units">€/kWh</span></p>`;
   }
   pricesCYM.innerHTML = htmlCode;
 };

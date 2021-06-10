@@ -9,6 +9,7 @@
     padding: 2rem;
   }
   @include tablet() {
+    font-size: 1rem;
     max-width: 50rem;
     margin: auto;
     padding: 0;
