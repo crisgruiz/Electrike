@@ -17,6 +17,10 @@
       align-items: center;
     }
   }
+  @include tablet() {
+    max-width: 40rem;
+    margin: 1.5rem auto 2rem;
+  }
 }
 p.priceTitle {
   font-size: 1.2rem;
@@ -37,10 +41,22 @@ p.place {
     font-size: 1.2rem;
     text-align: center;
     margin: 1.5rem 0 1rem;
+    @include tablet() {
+      max-width: 40rem;
+      margin: 1.5rem auto 1rem;
+    }
   }
   &__info {
     color: $color-title;
     font-size: 0.8rem;
+    @include tablet() {
+      max-width: 40rem;
+      margin: 1rem auto;
+    }
+  }
+  &__table {
+    max-width: 40rem;
+    margin: auto;
   }
 }
 
@@ -51,7 +67,6 @@ ul.tabs {
 }
 
 .tabs {
-  max-height: 25rem;
   font-size: 1rem;
   text-align: center;
   display: block;
@@ -74,6 +89,7 @@ ul.tabs {
   border-top: none;
   text-align: center;
   width: 100%;
+  padding: 0 1rem;
   &__title {
     color: $color-title;
     text-transform: uppercase;
@@ -88,4 +104,16 @@ ul.tabs {
 }
 .table tr {
   border-top: hidden;
+}
+
+.units {
+  @include miniMobile() {
+    display: none;
+  }
+}
+.size {
+  width: 20%;
+}
+.size2 {
+  width: 80%;
 }

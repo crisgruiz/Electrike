@@ -1,13 +1,17 @@
 @import "../core/core";
 
 .info {
-  padding: 0 2rem 0;
   font-size: 0.8rem;
   text-indent: 1rem;
   &__text {
     margin-top: 1rem;
     text-align: justify;
-    padding: 1rem;
+    padding: 2rem;
+  }
+  @include tablet() {
+    max-width: 50rem;
+    margin: auto;
+    padding: 0;
   }
 }
 

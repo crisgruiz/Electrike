@@ -60,7 +60,7 @@ const paintHours = (hourlyPrices) => {
 const paintPricesPCB = (hourlyPrices) => {
   let htmlCode = "";
   for (let i = 0; i < hourlyPrices.length; i++) {
-    htmlCode += `<p> ${hourlyPrices[i].PCB} €/kWh</p>`;
+    htmlCode += `<p> ${hourlyPrices[i].PCB} <span class="units">€/kWh</span></p>`;
   }
   pricesPCB.innerHTML = htmlCode;
 };
@@ -68,7 +68,7 @@ const paintPricesPCB = (hourlyPrices) => {
 const paintPricesCYM = (hourlyPrices) => {
   let htmlCode = "";
   for (let i = 0; i < hourlyPrices.length; i++) {
-    htmlCode += `<p> ${hourlyPrices[i].CYM} €/kWh</p>`;
+    htmlCode += `<p> ${hourlyPrices[i].CYM} <span class="units">€/kWh</span></p>`;
   }
   pricesCYM.innerHTML = htmlCode;
 };
