@@ -96,19 +96,40 @@ ul.tabs {
       display: inline;
     }
   }
+  &__hour {
+    &--item {
+      height: 3.5rem;
+      text-align: center;
+      margin: 0.3rem;
+      @include tablet() {
+        height: 2.5rem;
+      }
+    }
+  }
+  &__price {
+    &--item {
+      height: 3.5rem;
+      text-align: center;
+      margin: 0.3rem;
+      @include tablet() {
+        height: 2.5rem;
+      }
+    }
+  }
+}
+p.table__price--item {
+  margin: 0;
+}
+p.table__hour--item {
+  margin: 0;
 }
 .table tr {
   border-top: hidden;
 }
 
-.units {
-  @include miniMobile() {
-    display: none;
-  }
-}
 .size {
   width: 20%;
 }
 .size2 {
-  width: 80%;
+  width: 60%;
 }

@@ -1,9 +1,3 @@
-@mixin miniMobile {
-  @media all and (max-width: 350px) {
-    @content;
-  }
-}
-
 @mixin tablet {
   @media all and (min-width: 768px) {
     @content;

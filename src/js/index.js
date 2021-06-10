@@ -51,7 +51,7 @@ const variationCYM = document.querySelector(".js-varCYM");
 const paintHours = (hourlyPrices) => {
   let htmlCode = "";
   for (let i = 0; i < hourlyPrices.length; i++) {
-    htmlCode += `<pclass="table__hour--item"> ${hourlyPrices[i].hour}</p>`;
+    htmlCode += `<p class="table__hour--item"> ${hourlyPrices[i].hour}</p>`;
   }
   hoursPCB.innerHTML = htmlCode;
   hoursCYM.innerHTML = htmlCode;
