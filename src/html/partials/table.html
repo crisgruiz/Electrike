@@ -17,31 +17,40 @@
       <li class="tabs__item active">PCB</li>
       <li class="tabs__item">CYM</li>
     </ul>
-    <div class="table">
+    <section class="table">
       <table class="table__item js-table active">
-        <tr class="table__title">
-          <td class="table__title--hour">hora</td>
-          <td class="table__title--price">precio</td>
-          <td class="table__title--icon">variación</td>
-        </tr>
-        <tr>
-          <td class="table__hour js-hourPCB"></td>
-          <td class="table__price js-pricePCB"></td>
-          <td class="table__var js-varPCB"></td>
-        </tr>
+        <thead>
+          <tr class="table__title">
+            <th class="table__title--hour" scope="col">hora</th>
+            <th class="table__title--price" scope="col">precio</th>
+            <th class="table__title--icon" scope="col">variación</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="table__hour js-hourPCB" scope="row"></td>
+            <td class="table__price js-pricePCB"></td>
+            <td class="table__var js-varPCB"></td>
+          </tr>
+        </tbody>
       </table>
       <table class="table__item js-table">
+        <thead></thead>
         <tr class="table__title">
-          <td class="table__title--hour">hora</td>
-          <td class="table__title--price">precio</td>
-          <td class="table__title--icon">variación</td>
+          <th class="table__title--hour" scope="col">hora</th>
+          <th class="table__title--price" scope="col">precio</th>
+          <th class="table__title--icon" scope="col">variación</th>
         </tr>
+      </thead>
+      <tbody>
         <tr>
-          <td class="table__hour js-hourCYM"></td>
+          <td class="table__hour js-hourCYM" scope="row"></td>
           <td class="table__price js-priceCYM"></td>
           <td class="table__var js-varCYM"></td>
         </tr>
+      </tbody>
       </table>
-    </div>
+    </section>
+ 
   </div>
 </div>

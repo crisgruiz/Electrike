@@ -51,6 +51,7 @@ ul.tabs {
 }
 
 .tabs {
+  max-height: 25rem;
   font-size: 1rem;
   text-align: center;
   display: block;
@@ -73,31 +74,18 @@ ul.tabs {
   border-top: none;
   text-align: center;
   width: 100%;
-  display: block;
   &__title {
     color: $color-title;
     text-transform: uppercase;
     font-size: 0.8rem;
   }
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
   &__item {
     display: none;
     &.active {
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
+      display: inline;
     }
   }
 }
-.table td {
+.table tr {
   border-top: hidden;
-}
-tbody {
-  max-height: 25rem; /* Just for the demo          */
-  overflow-y: auto; /* Trigger vertical scroll    */
-  overflow-x: hidden; /* Hide the horizontal scroll */
 }

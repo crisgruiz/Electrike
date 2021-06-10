@@ -29,15 +29,3 @@ html {
     font-size: 5rem;
   }
 }
-
-.line {
-  height: 0.1rem;
-  width: 100%;
-  background-color: $color-title;
-  @include tablet() {
-    height: 0.15rem;
-  }
-  @include desktop() {
-    height: 0.2rem;
-  }
-}
