@@ -1,6 +1,9 @@
 @import "../core/core";
 
 .footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
   padding: 1rem 4rem 1rem 2rem;
   font-family: $font-main;
   border-top: solid 1px $color-lines;

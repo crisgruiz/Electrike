@@ -51,7 +51,6 @@ ul.tabs {
 }
 
 .tabs {
-  max-height: 25rem;
   font-size: 1rem;
   text-align: center;
   display: block;
@@ -98,7 +97,7 @@ ul.tabs {
   border-top: hidden;
 }
 tbody {
-  height: 30rem; /* Just for the demo          */
+  max-height: 25rem; /* Just for the demo          */
   overflow-y: auto; /* Trigger vertical scroll    */
   overflow-x: hidden; /* Hide the horizontal scroll */
 }
