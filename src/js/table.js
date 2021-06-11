@@ -79,6 +79,9 @@ const tablesItem = Array.prototype.slice.apply(
 const resumeItem = Array.prototype.slice.apply(
   document.querySelectorAll(".resume__item")
 );
+const currentPriceItem = Array.prototype.slice.apply(
+  document.querySelectorAll(".currentPrice__item")
+);
 const tabs = document.getElementById("tabs");
 
 const handleClick = (e) => {
@@ -90,6 +93,10 @@ const handleClick = (e) => {
     tablesItem[i].classList.add("active");
     resumeItem.map((resume) => resume.classList.remove("active"));
     resumeItem[i].classList.add("active");
+    currentPriceItem.map((currentPrice) =>
+      currentPrice.classList.remove("active")
+    );
+    currentPriceItem[i].classList.add("active");
   }
 };
 

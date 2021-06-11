@@ -5,8 +5,27 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin: 2rem 0;
+  margin: 1rem 0;
   color: $color-title;
   font-weight: bold;
   font-size: 1.2rem;
+  &__item {
+    display: none;
+    &.active {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
+
+p.currentPrice__text {
+  margin: 0 0.3rem 0 0;
+}
+p.currentPrice__hour {
+  margin: 0 0.5rem 0 0;
+}
+p.currentPrice__price {
+  margin: 0;
 }

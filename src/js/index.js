@@ -36,7 +36,8 @@ const getElectricityPrice = () => {
       paintHours(hourlyPrices);
       paintPricesPCB(hourlyPrices);
       paintPricesCYM(hourlyPrices);
-      printCurrentPrice(hourlyPrices);
+      printCurrentPricePCB(hourlyPrices);
+      printCurrentPriceCYM(hourlyPrices);
     });
 };
 getElectricityPrice();
