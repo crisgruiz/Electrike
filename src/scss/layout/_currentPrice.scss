@@ -2,21 +2,34 @@
 
 .currentPrice {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   margin: 1rem 0;
   color: $color-title;
   font-weight: bold;
   font-size: 1.2rem;
+  @include tablet() {
+    font-size: 1.5rem;
+    flex-direction: row;
+  }
   &__item {
     display: none;
     &.active {
       display: flex;
-      flex-direction: row;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
+      @include tablet() {
+        flex-direction: row;
+      }
     }
+  }
+  &__price {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
   }
 }
 
