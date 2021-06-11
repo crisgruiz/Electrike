@@ -98,10 +98,13 @@
 
               <section class="container">
                 <div class="prices">
-                  <h2 class="prices__title">tabla de precios según horas</h2>
-                  <p class="prices__info">PCB = Península, Canarias y Baleares</p>
-                  <p class="prices__info">CYM = Ceuta y Melilla</p>
+                  <!-- <h2 class="prices__title">tabla de precios según horas</h2> -->
                   <div class="date js-date"></div>
+                  <div class="currentPrice">
+                    <div class="currentPrice__item js-currentPricePCB active"></div>
+                    <div class="currentPrice__item js-currentPriceCYM"></div>
+                  </div>
+
                   <div class="resume">
                     <div class="resume__item active">
                       <div class="resume__lowPrice js-lowPCB"></div>
@@ -114,8 +117,8 @@
                   </div>
                   <div class="prices__table">
                     <ul class="tabs" id="tabs">
-                      <li class="tabs__item active">PCB</li>
-                      <li class="tabs__item">CYM</li>
+                      <li class="tabs__item active">Península, Canarias y Baleares (PCB)</li>
+                      <li class="tabs__item">Ceuta y Melilla (CYM)</li>
                     </ul>
                     <section class="table">
                       <table class="table__item js-table active">

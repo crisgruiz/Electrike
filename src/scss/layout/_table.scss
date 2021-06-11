@@ -109,7 +109,7 @@ ul.tabs {
       text-align: center;
       margin: 0.3rem;
       @include tablet() {
-        height: 2.5rem;
+        height: 2.8rem;
       }
     }
   }
@@ -119,15 +119,32 @@ ul.tabs {
       text-align: center;
       margin: 0.3rem;
       @include tablet() {
-        height: 2.5rem;
+        height: 2.8rem;
       }
     }
   }
+  &__var {
+    &--icon {
+      height: 3.5rem;
+      @include tablet() {
+        height: 2.8rem;
+      }
+    }
+  }
+}
+.up {
+  color: $up-icon;
+}
+.down {
+  color: $down-icon;
 }
 p.table__price--item {
   margin: 0;
 }
 p.table__hour--item {
+  margin: 0;
+}
+p.table__var--icon {
   margin: 0;
 }
 .table tr {

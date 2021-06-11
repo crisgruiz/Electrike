@@ -16,7 +16,6 @@ const getElectricityPrice = () => {
       const hours = data.pcb.map((x) => x.hour);
       const PCBprices = data.pcb.map((x) => x.price.toFixed(5));
       const CYMprices = data.cym.map((x) => x.price.toFixed(5));
-      console.log(data);
       let PVPCdata = [];
       for (let i = 0; i < hours.length; i++) {
         let objectElement = {
@@ -36,6 +35,8 @@ const getElectricityPrice = () => {
       paintHours(hourlyPrices);
       paintPricesPCB(hourlyPrices);
       paintPricesCYM(hourlyPrices);
+      paintVariationPCB(hourlyPrices);
+      paintVariationCYM(hourlyPrices);
       printCurrentPricePCB(hourlyPrices);
       printCurrentPriceCYM(hourlyPrices);
     });
@@ -75,4 +76,34 @@ const paintPricesCYM = (hourlyPrices) => {
     htmlCode += `<p class="table__price--item"> ${hourlyPrices[i].CYM} <span class="units">€/kWh</span></p>`;
   }
   pricesCYM.innerHTML = htmlCode;
+};
+
+const paintVariationPCB = (hourlyPrices) => {
+  let htmlCode = `<p class="table__var--icon equal"><i class="fas fa-equals"></i></p>`;
+  for (let i = 1; i < hourlyPrices.length; i++) {
+    let previousValue = hourlyPrices[i - 1].PCB;
+    if (previousValue < hourlyPrices[i].PCB) {
+      htmlCode += `<p class="table__var--icon up"><i class="fas fa-chevron-circle-up"></i></p>`;
+    } else if (previousValue > hourlyPrices[i].PCB) {
+      htmlCode += `<p class="table__var--icon down"><i class="fas fa-chevron-circle-down"></i></p>`;
+    } else {
+      htmlCode += `<p class="table__var--icon equal"><i class="fas fa-equals"></i></p>`;
+    }
+  }
+  variationPCB.innerHTML = htmlCode;
+};
+
+const paintVariationCYM = (hourlyPrices) => {
+  let htmlCode = `<p class="table__var--icon equal"><i class="fas fa-equals"></i></p>`;
+  for (let i = 1; i < hourlyPrices.length; i++) {
+    let previousValue = hourlyPrices[i - 1].CYM;
+    if (previousValue < hourlyPrices[i].CYM) {
+      htmlCode += `<p class="table__var--icon up"><i class="fas fa-chevron-circle-up"></i></p>`;
+    } else if (previousValue > hourlyPrices[i].CYM) {
+      htmlCode += `<p class="table__var--icon down"><i class="fas fa-chevron-circle-down"></i></p>`;
+    } else {
+      htmlCode += `<p class="table__var--icon equal"><i class="fas fa-equals"></i></p>`;
+    }
+  }
+  variationCYM.innerHTML = htmlCode;
 };

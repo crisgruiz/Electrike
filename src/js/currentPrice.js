@@ -1,7 +1,6 @@
 const currentPricePCB = document.querySelector(".js-currentPricePCB");
 const currentPriceCYM = document.querySelector(".js-currentPriceCYM");
 let currentHour = new Date().getHours() + ":00";
-console.log(typeof currentHour);
 
 const printCurrentPricePCB = (hourlyPrices) => {
   let htmlCode = "";
