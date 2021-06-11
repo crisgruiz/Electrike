@@ -12,13 +12,15 @@ const getElectricityPrice = () => {
   )
     .then((response) => response.json())
     .then((data) => {
-      const hours = data.pcb.map((x) => x.hour_str);
-      const PCBprices = data.pcb.map((x) => x.price.toFixed(4));
-      const CYMprices = data.cym.map((x) => x.price.toFixed(4));
+      const zero = ":00";
+      const hours = data.pcb.map((x) => x.hour);
+      const PCBprices = data.pcb.map((x) => x.price.toFixed(5));
+      const CYMprices = data.cym.map((x) => x.price.toFixed(5));
+      console.log(data);
       let PVPCdata = [];
       for (let i = 0; i < hours.length; i++) {
         let objectElement = {
-          hour: hours[i],
+          hour: hours[i] + zero,
           PCB: PCBprices[i],
           CYM: CYMprices[i],
         };
