@@ -2,6 +2,7 @@
 
 //Current date
 let date = new Date();
+const zero = ":00";
 let ISOdate = date.toISOString();
 let formatDate = ISOdate.split("").splice(0, 10).join("");
 
@@ -12,7 +13,6 @@ const getElectricityPrice = () => {
   )
     .then((response) => response.json())
     .then((data) => {
-      const zero = ":00";
       const hours = data.pcb.map((x) => x.hour);
       const PCBprices = data.pcb.map((x) => x.price.toFixed(5));
       const CYMprices = data.cym.map((x) => x.price.toFixed(5));
@@ -20,7 +20,7 @@ const getElectricityPrice = () => {
       let PVPCdata = [];
       for (let i = 0; i < hours.length; i++) {
         let objectElement = {
-          hour: hours[i] + zero,
+          hour: hours[i] + ":00",
           PCB: PCBprices[i],
           CYM: CYMprices[i],
         };
@@ -36,6 +36,7 @@ const getElectricityPrice = () => {
       paintHours(hourlyPrices);
       paintPricesPCB(hourlyPrices);
       paintPricesCYM(hourlyPrices);
+      printCurrentPrice(hourlyPrices);
     });
 };
 getElectricityPrice();
