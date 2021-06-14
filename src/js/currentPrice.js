@@ -1,13 +1,14 @@
 const currentPricePCB = document.querySelector(".js-currentPricePCB");
 const currentPriceCYM = document.querySelector(".js-currentPriceCYM");
 let currentHour = new Date().getHours() + ":00";
+let fulltime = new Date().getHours() + ":" + new Date().getMinutes();
 
 const printCurrentPricePCB = (hourlyPrices) => {
   let htmlCode = "";
   let presentPrice = "";
   htmlCode += `<div class="currentPrice__price">`;
   htmlCode += `<p class="currentPrice__text">Precio actual</p>`;
-  htmlCode += `<p class="currentPrice__hour">(${currentHour}):</p>`;
+  htmlCode += `<p class="currentPrice__hour">(${fulltime}):</p>`;
   htmlCode += `</div>`;
   for (let i = 0; i < hourlyPrices.length; i++) {
     if (hourlyPrices[i].hour === currentHour) {
