@@ -1,7 +1,16 @@
 const currentPricePCB = document.querySelector(".js-currentPricePCB");
 const currentPriceCYM = document.querySelector(".js-currentPriceCYM");
 let currentHour = new Date().getHours() + ":00";
-let fulltime = new Date().getHours() + ":" + new Date().getMinutes();
+var resolvedOptions = Intl.DateTimeFormat().resolvedOptions();
+
+options = {
+  hour: "numeric",
+  minute: "numeric",
+};
+let fulltime = new Intl.DateTimeFormat(
+  resolvedOptions.locale,
+  options
+).format();
 
 const printCurrentPricePCB = (hourlyPrices) => {
   let htmlCode = "";

@@ -1,7 +1,7 @@
 @import "../core/core";
 
 .info {
-  font-size: 0.8rem;
+  font-size: 1rem;
   text-indent: 1rem;
   &__text {
     margin-top: 1rem;
@@ -9,7 +9,7 @@
     padding: 2rem;
   }
   @include tablet() {
-    font-size: 1rem;
+    font-size: 1.2rem;
     max-width: 50rem;
     margin: auto;
     padding: 0;
