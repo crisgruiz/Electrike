@@ -1,7 +1,7 @@
-<div class="prices">
-  <!-- <h2 class="prices__title">tabla de precios según horas</h2> -->
-  <div class="date js-date"></div>
-  <include src="./currentPrice.html"></include>
+<div class="date js-date"></div>
+<div class="prices row">
+      <div class="col-xs-12 col-sm-12 col-md-6">
+    <include src="./currentPrice.html"></include>
   <div class="resume">
     <div class="resume__item active">
       <div class="resume__lowPrice js-lowPCB"></div>
@@ -12,7 +12,8 @@
       <div class="resume__highPrice js-highCYM"></div>
     </div>
   </div>
-  <div class="prices__table">
+</div>
+  <div class="prices__table col-xs-12 col-sm-12 col-md-6">
     <ul class="tabs" id="tabs">
       <li class="tabs__item active">Península, Canarias y Baleares (PCB)</li>
       <li class="tabs__item">Ceuta y Melilla (CYM)</li>

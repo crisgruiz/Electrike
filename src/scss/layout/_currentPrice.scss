@@ -20,9 +20,6 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      @include tablet() {
-        flex-direction: row;
-      }
     }
   }
   &__price {
