@@ -35,7 +35,7 @@ const printCurrentPriceCYM = (hourlyPrices) => {
   let presentPrice = "";
   htmlCode += `<div class="currentPrice__price">`;
   htmlCode += `<p class="currentPrice__text">Precio actual</p>`;
-  htmlCode += `<p class="currentPrice__hour">(${currentHour}):</p>`;
+  htmlCode += `<p class="currentPrice__hour">(${fulltime}):</p>`;
   htmlCode += `</div>`;
   for (let i = 0; i < hourlyPrices.length; i++) {
     if (hourlyPrices[i].hour === currentHour) {
