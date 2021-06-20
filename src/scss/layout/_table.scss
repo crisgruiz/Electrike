@@ -43,6 +43,29 @@
     font-size: 1rem;
   }
 }
+
+.legend {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+  &__text {
+    margin: 0 1rem 0 0.5rem;
+    text-transform: capitalize;
+  }
+  &__icon {
+    &--low {
+      color: $lowPrice;
+    }
+    &--medium {
+      color: $mediumPrice;
+    }
+    &--high {
+      color: $highPrice;
+    }
+  }
+}
 p.priceTitle {
   font-size: 1.2rem;
   font-weight: bold;

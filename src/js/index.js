@@ -37,7 +37,8 @@ const getElectricityPrice = () => {
   )
     .then((response) => response.json())
     .then((hourlyPrices) => {
-      paintHours(hourlyPrices.pcb);
+      paintHours(hourlyPrices.pcb, hoursPCB);
+      paintHours(hourlyPrices.cym, hoursCYM);
       paintPrices(hourlyPrices.pcb, pricesPCB);
       paintPrices(hourlyPrices.cym, pricesCYM);
       paintVariation(hourlyPrices.pcb, variationPCB);
@@ -58,14 +59,13 @@ getElectricityPrice();
 
 //table with data
 
-const paintHours = (hourlyPrices) => {
+const paintHours = (hourlyPrices, hours) => {
   let htmlCode = "";
   for (let i = 0; i < hourlyPrices.length; i++) {
     sectionStyle = sectionsMap[hourlyPrices[i].section];
     htmlCode += `<p class="table__hour--item ${sectionStyle}"> ${hourlyPrices[i].hour}:00</p>`;
   }
-  hoursPCB.innerHTML = htmlCode;
-  hoursCYM.innerHTML = htmlCode;
+  hours.innerHTML = htmlCode;
 };
 
 const sectionsMap = {
