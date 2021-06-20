@@ -180,12 +180,24 @@ ul.tabs {
 }
 p.table__price--item {
   margin: 0;
+  padding: 1rem;
+  @include tablet() {
+    padding: 0.6rem;
+  }
 }
 p.table__hour--item {
   margin: 0;
+  padding: 1rem;
+  @include tablet() {
+    padding: 0.6rem;
+  }
 }
 p.table__var--icon {
   margin: 0;
+  padding: 1rem;
+  @include tablet() {
+    padding: 0.6rem;
+  }
 }
 .table tr {
   border-top: hidden;
