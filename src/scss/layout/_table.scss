@@ -21,6 +21,7 @@
   margin: 2rem 0;
   @include tablet() {
     font-size: 1.2rem;
+    max-width: 40rem;
   }
 
   &__item {
@@ -38,9 +39,8 @@
       }
     }
   }
-  @include tablet() {
-    max-width: 40rem;
-    // margin: 1.5rem auto 2rem;
+  &__arrow {
+    font-size: 1rem;
   }
 }
 p.priceTitle {

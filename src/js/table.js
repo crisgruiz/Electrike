@@ -25,7 +25,7 @@ const paintMinPricePCB = (hourlyPrices) => {
   }
 
   htmlCode += `<p class="priceTitle">Hora más barata</p>`;
-  htmlCode += `<p> ${minElement.hour}:00 -> ${minElement.PCB} €/kWh</p>`;
+  htmlCode += `<p> ${minElement.hour}:00 <i class="fas fa-arrow-right resume__arrow"></i> ${minElement.PCB} €/kWh</p>`;
   lowPricePCB.innerHTML = htmlCode;
 };
 
@@ -39,7 +39,7 @@ const paintMinPriceCYM = (hourlyPrices) => {
   }
 
   htmlCode += `<p class="priceTitle">Hora más barata</p>`;
-  htmlCode += `<p> ${minElementCYM.hour}:00 -> ${minElementCYM.CYM} €/kWh</p>`;
+  htmlCode += `<p> ${minElementCYM.hour}:00 <i class="fas fa-arrow-right resume__arrow"></i> ${minElementCYM.CYM} €/kWh</p>`;
   lowPriceCYM.innerHTML = htmlCode;
 };
 
@@ -53,7 +53,7 @@ const paintMaxPricePCB = (hourlyPrices) => {
   }
 
   htmlCode += `<p class="priceTitle">Hora más cara</p>`;
-  htmlCode += `<p> ${maxElement.hour}:00 -> ${maxElement.PCB} €/kWh</p>`;
+  htmlCode += `<p> ${maxElement.hour}:00 <i class="fas fa-arrow-right resume__arrow"></i> ${maxElement.PCB} €/kWh</p>`;
   highPricePCB.innerHTML = htmlCode;
 };
 
@@ -66,7 +66,7 @@ const paintMaxPriceCYM = (hourlyPrices) => {
     }
   }
   htmlCode += `<p class="priceTitle">Hora más cara</p>`;
-  htmlCode += `<p> ${maxElementCYM.hour}:00 -> ${maxElementCYM.CYM} €/kWh</p>`;
+  htmlCode += `<p> ${maxElementCYM.hour}:00 <i class="fas fa-arrow-right resume__arrow"></i> ${maxElementCYM.CYM} €/kWh</p>`;
   highPriceCYM.innerHTML = htmlCode;
 };
 

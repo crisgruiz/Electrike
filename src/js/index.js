@@ -2,8 +2,6 @@
 
 //Current date
 let date = new Date();
-let ISOdate = date.toISOString();
-console.log(ISOdate);
 let currentDay = date.getDay();
 options = {
   hour: "numeric",
