@@ -4,15 +4,6 @@ let currentHour = new Date().getHours();
 var resolvedOptions = Intl.DateTimeFormat().resolvedOptions();
 
 let fulltime = new Date().getHours() + ":" + new Date().getMinutes();
-// options = {
-//   hour: "numeric",
-//   minute: "numeric",
-// };
-// let fulltime = new Intl.DateTimeFormat(
-//   resolvedOptions.locale,
-//   options
-// ).format();
-
 const printCurrentPricePCB = (hourlyPrices) => {
   let htmlCode = "";
   let presentPrice = "";

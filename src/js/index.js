@@ -3,9 +3,21 @@
 //Current date
 let date = new Date();
 let ISOdate = date.toISOString();
+console.log(ISOdate);
 let currentDay = date.getDay();
-console.log(currentDay);
-let formatDate = ISOdate.split("").splice(0, 10).join("");
+options = {
+  hour: "numeric",
+  minute: "numeric",
+  day: "numeric",
+  month: "2-digit",
+  year: "numeric",
+};
+let IntlDate = new Intl.DateTimeFormat(
+  resolvedOptions.locale,
+  options
+).format();
+
+let formatDate = IntlDate.slice(0, 10).split("/").reverse().join("-");
 
 //Llamada al API
 const getElectricityPrice = () => {
