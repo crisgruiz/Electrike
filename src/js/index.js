@@ -4,6 +4,7 @@
 let date = new Date();
 let ISOdate = date.toISOString();
 let currentDay = date.getDay();
+console.log(currentDay);
 let formatDate = ISOdate.split("").splice(0, 10).join("");
 
 //Llamada al API
