@@ -2,15 +2,19 @@
 
 .footer {
   width: 100%;
-  padding: 1rem 4rem 1rem 2rem;
+  padding: 1rem 2rem;
   font-family: $font-main;
   border-top: solid 1px $color-lines;
   background-color: $footer-background;
+  @include tablet() {
+    padding: 1rem 4rem 1rem 2rem;
+  }
   &__container {
     height: 2rem;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
     @include tablet() {
       height: 1.5rem;
     }
@@ -29,6 +33,7 @@
     &--icon {
       text-decoration: none;
       color: $color-icon;
+      font-size: 1.5rem;
     }
   }
 }
