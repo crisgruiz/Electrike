@@ -43,6 +43,29 @@
     font-size: 1rem;
   }
 }
+
+.legend {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+  &__text {
+    margin: 0 1rem 0 0.5rem;
+    text-transform: capitalize;
+  }
+  &__icon {
+    &--low {
+      color: $lowPrice;
+    }
+    &--medium {
+      color: $mediumPrice;
+    }
+    &--high {
+      color: $highPrice;
+    }
+  }
+}
 p.priceTitle {
   font-size: 1.2rem;
   font-weight: bold;
@@ -107,7 +130,7 @@ ul.tabs {
   border-top: none;
   text-align: center;
   width: 100%;
-  padding: 0 1rem;
+  padding: 0 1rem 1rem;
   &__title {
     color: $color-title;
     text-transform: uppercase;
@@ -157,15 +180,31 @@ ul.tabs {
 }
 p.table__price--item {
   margin: 0;
+  padding: 1rem;
+  @include tablet() {
+    padding: 0.6rem;
+  }
 }
 p.table__hour--item {
   margin: 0;
+  padding: 1rem;
+  @include tablet() {
+    padding: 0.6rem;
+  }
 }
 p.table__var--icon {
   margin: 0;
+  padding: 1rem;
+  @include tablet() {
+    padding: 0.6rem;
+  }
 }
 .table tr {
   border-top: hidden;
+  padding-top: 0.5rem;
+}
+.table td {
+  padding: 0;
 }
 
 .size {
@@ -173,4 +212,15 @@ p.table__var--icon {
 }
 .size2 {
   width: 60%;
+}
+
+.sectionLow {
+  background-color: $lowPrice;
+}
+
+.sectionMedium {
+  background-color: $mediumPrice;
+}
+.sectionHigh {
+  background-color: $highPrice;
 }

@@ -82,13 +82,3 @@ const handleClick = (e) => {
 };
 
 tabs.addEventListener("click", handleClick);
-
-const handleWeekendRange = () => {
-  if (currentDay === 6 || currentDay === 0) {
-    hoursPCB.style.color = "green";
-    hoursCYM.style.color = "green";
-    pricesPCB.style.color = "green";
-    pricesCYM.style.color = "green";
-  }
-};
-handleWeekendRange();
