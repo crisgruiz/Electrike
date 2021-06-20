@@ -14,9 +14,9 @@ $color-lines: #d8d8d8;
 $color-icon: black;
 $up-icon: red;
 $down-icon: green;
-$highPrice: red;
-$mediumPrice: rgb(255, 157, 0);
-$lowPrice: green;
+$highPrice: rgba(255, 0, 0, 0.15);
+$mediumPrice: rgba(255, 157, 0, 0.15);
+$lowPrice: rgba(78, 210, 75, 0.15);
 
 // fonts
 $font-index: "Merriweather", serif;

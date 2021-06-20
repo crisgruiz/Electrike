@@ -107,7 +107,7 @@ ul.tabs {
   border-top: none;
   text-align: center;
   width: 100%;
-  padding: 0 1rem;
+  padding: 0 1rem 1rem;
   &__title {
     color: $color-title;
     text-transform: uppercase;
@@ -166,6 +166,10 @@ p.table__var--icon {
 }
 .table tr {
   border-top: hidden;
+  padding-top: 0.5rem;
+}
+.table td {
+  padding: 0;
 }
 
 .size {
@@ -173,4 +177,15 @@ p.table__var--icon {
 }
 .size2 {
   width: 60%;
+}
+
+.sectionLow {
+  background-color: $lowPrice;
+}
+
+.sectionMedium {
+  background-color: $mediumPrice;
+}
+.sectionHigh {
+  background-color: $highPrice;
 }
