@@ -33,7 +33,7 @@ const highPriceCYM = document.querySelector(".js-highCYM");
 //Llamada al API
 const getElectricityPrice = () => {
   return fetch(
-    `https://electrike-otkzylkdbx.s3-eu-west-1.amazonaws.com/v2/2021-06-15.json`
+    `https://electrike-otkzylkdbx.s3-eu-west-1.amazonaws.com/v2/${formatDate}.json`
   )
     .then((response) => response.json())
     .then((hourlyPrices) => {
