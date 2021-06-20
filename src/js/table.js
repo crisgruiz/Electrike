@@ -1,7 +1,3 @@
-const lowPricePCB = document.querySelector(".js-lowPCB");
-const highPricePCB = document.querySelector(".js-highPCB");
-const lowPriceCYM = document.querySelector(".js-lowCYM");
-const highPriceCYM = document.querySelector(".js-highCYM");
 const priceDate = document.querySelector(".js-date");
 
 //current date
@@ -15,59 +11,44 @@ printDate();
 
 //Resume prices
 
-const paintMinPricePCB = (hourlyPrices) => {
-  let htmlCode = "";
-  let minElement = { PCB: 1000 };
+const getMinPriceItem = (hourlyPrices) => {
+  let minPrice = 10;
+  let minElement = null;
   for (let i = 0; i < hourlyPrices.length; i++) {
-    if (hourlyPrices[i].PCB < minElement.PCB) {
+    if (hourlyPrices[i].price < minPrice) {
       minElement = hourlyPrices[i];
+      minPrice = hourlyPrices[i].price;
     }
   }
-
-  htmlCode += `<p class="priceTitle">Hora más barata</p>`;
-  htmlCode += `<p> ${minElement.hour}:00 <i class="fas fa-arrow-right resume__arrow"></i> ${minElement.PCB} €/kWh</p>`;
-  lowPricePCB.innerHTML = htmlCode;
+  return minElement;
 };
 
-const paintMinPriceCYM = (hourlyPrices) => {
+const paintMinPrice = (hourlyPrices, table) => {
   let htmlCode = "";
-  let minElementCYM = { CYM: 1000 };
-  for (let i = 0; i < hourlyPrices.length; i++) {
-    if (hourlyPrices[i].CYM < minElementCYM.CYM) {
-      minElementCYM = hourlyPrices[i];
-    }
-  }
-
+  minElement = getMinPriceItem(hourlyPrices);
   htmlCode += `<p class="priceTitle">Hora más barata</p>`;
-  htmlCode += `<p> ${minElementCYM.hour}:00 <i class="fas fa-arrow-right resume__arrow"></i> ${minElementCYM.CYM} €/kWh</p>`;
-  lowPriceCYM.innerHTML = htmlCode;
+  htmlCode += `<p> ${minElement.hour}:00 <i class="fas fa-arrow-right resume__arrow"></i> ${minElement.price} €/kWh</p>`;
+  table.innerHTML = htmlCode;
 };
 
-const paintMaxPricePCB = (hourlyPrices) => {
-  let htmlCode = "";
-  let maxElement = { PCB: 0 };
+const getMaxPriceItem = (hourlyPrices) => {
+  let maxPrice = 0;
+  let maxElement = null;
   for (let i = 0; i < hourlyPrices.length; i++) {
-    if (hourlyPrices[i].PCB > maxElement.PCB) {
+    if (hourlyPrices[i].price > maxPrice) {
       maxElement = hourlyPrices[i];
+      maxPrice = hourlyPrices[i].price;
     }
   }
-
-  htmlCode += `<p class="priceTitle">Hora más cara</p>`;
-  htmlCode += `<p> ${maxElement.hour}:00 <i class="fas fa-arrow-right resume__arrow"></i> ${maxElement.PCB} €/kWh</p>`;
-  highPricePCB.innerHTML = htmlCode;
+  return maxElement;
 };
 
-const paintMaxPriceCYM = (hourlyPrices) => {
+const paintMaxPrice = (hourlyPrices, table) => {
   let htmlCode = "";
-  let maxElementCYM = { CYM: 0 };
-  for (let i = 0; i < hourlyPrices.length; i++) {
-    if (hourlyPrices[i].CYM > maxElementCYM.CYM) {
-      maxElementCYM = hourlyPrices[i];
-    }
-  }
+  maxElement = getMaxPriceItem(hourlyPrices);
   htmlCode += `<p class="priceTitle">Hora más cara</p>`;
-  htmlCode += `<p> ${maxElementCYM.hour}:00 <i class="fas fa-arrow-right resume__arrow"></i> ${maxElementCYM.CYM} €/kWh</p>`;
-  highPriceCYM.innerHTML = htmlCode;
+  htmlCode += `<p> ${maxElement.hour}:00 <i class="fas fa-arrow-right resume__arrow"></i> ${maxElement.price} €/kWh</p>`;
+  table.innerHTML = htmlCode;
 };
 
 const tabsItem = Array.prototype.slice.apply(
