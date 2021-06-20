@@ -2,8 +2,8 @@
 
 //Current date
 let date = new Date();
-const zero = ":00";
 let ISOdate = date.toISOString();
+let currentDay = date.getDay();
 let formatDate = ISOdate.split("").splice(0, 10).join("");
 
 //Llamada al API
@@ -19,7 +19,7 @@ const getElectricityPrice = () => {
       let PVPCdata = [];
       for (let i = 0; i < hours.length; i++) {
         let objectElement = {
-          hour: hours[i] + ":00",
+          hour: hours[i],
           PCB: PCBprices[i],
           CYM: CYMprices[i],
         };
@@ -39,6 +39,11 @@ const getElectricityPrice = () => {
       paintVariationCYM(hourlyPrices);
       printCurrentPricePCB(hourlyPrices);
       printCurrentPriceCYM(hourlyPrices);
+    })
+    .catch(() => {
+      return {
+        error: "fetch error",
+      };
     });
 };
 getElectricityPrice();
@@ -56,7 +61,7 @@ const variationCYM = document.querySelector(".js-varCYM");
 const paintHours = (hourlyPrices) => {
   let htmlCode = "";
   for (let i = 0; i < hourlyPrices.length; i++) {
-    htmlCode += `<p class="table__hour--item"> ${hourlyPrices[i].hour}</p>`;
+    htmlCode += `<p class="table__hour--item"> ${hourlyPrices[i].hour}:00</p>`;
   }
   hoursPCB.innerHTML = htmlCode;
   hoursCYM.innerHTML = htmlCode;
