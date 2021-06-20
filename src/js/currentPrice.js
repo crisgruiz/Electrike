@@ -1,7 +1,5 @@
 let currentHour = new Date().getHours();
 var resolvedOptions = Intl.DateTimeFormat().resolvedOptions();
-let fulltime = new Date().getHours() + ":" + new Date().getMinutes();
-
 const currentPricePCB = document.querySelector(".js-currentPricePCB");
 const currentPriceCYM = document.querySelector(".js-currentPriceCYM");
 

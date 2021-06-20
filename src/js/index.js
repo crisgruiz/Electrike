@@ -16,6 +16,7 @@ let IntlDate = new Intl.DateTimeFormat(
 ).format();
 
 let formatDate = IntlDate.slice(0, 10).split("/").reverse().join("-");
+let fulltime = IntlDate.slice(11, 16);
 
 const infoDetailPCB = document.querySelector(".js-table");
 const hoursPCB = document.querySelector(".js-hourPCB");
