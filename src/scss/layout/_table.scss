@@ -145,33 +145,43 @@ ul.tabs {
   }
   &__hour {
     &--item {
-      height: 3.5rem;
+      height: 4rem;
       text-align: center;
-      margin: 0.3rem;
-      @include tablet() {
-        height: 2.8rem;
-      }
     }
   }
   &__price {
     &--item {
-      height: 3.5rem;
+      height: 4rem;
       text-align: center;
-      margin: 0.3rem;
-      @include tablet() {
-        height: 2.8rem;
-      }
     }
   }
   &__var {
     &--icon {
-      height: 3.5rem;
-      @include tablet() {
+      height: 4rem;
+    }
+  }
+}
+
+@media all and (min-width: 400px) {
+  .table {
+    &__hour {
+      &--item {
+        height: 2.8rem;
+      }
+    }
+    &__price {
+      &--item {
+        height: 2.8rem;
+      }
+    }
+    &__var {
+      &--icon {
         height: 2.8rem;
       }
     }
   }
 }
+
 .up {
   color: $up-icon;
 }
@@ -180,23 +190,23 @@ ul.tabs {
 }
 p.table__price--item {
   margin: 0;
-  padding: 1rem;
+  padding: 0.5rem 1rem 1rem;
   @include tablet() {
-    padding: 0.6rem;
+    padding: 0.5rem;
   }
 }
 p.table__hour--item {
   margin: 0;
-  padding: 1rem;
+  padding: 0.5rem 1rem 1rem;
   @include tablet() {
-    padding: 0.6rem;
+    padding: 0.5rem;
   }
 }
 p.table__var--icon {
   margin: 0;
-  padding: 1rem;
+  padding: 0.5rem 1rem 1rem;
   @include tablet() {
-    padding: 0.6rem;
+    padding: 0.5rem;
   }
 }
 .table tr {
