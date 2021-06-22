@@ -17,7 +17,7 @@ const htmlCurrentPrice = (price) => {
   let htmlCode = "";
   htmlCode += `<div class="currentPrice__price">`;
   htmlCode += `<p class="currentPrice__text">Precio actual</p>`;
-  htmlCode += `<p class="currentPrice__hour">(${fulltime}):</p>`;
+  htmlCode += `<p class="currentPrice__hour">(${hourAsString()}):</p>`;
   htmlCode += `</div>`;
   htmlCode += `<div class="currentPrice__price">`;
   htmlCode += `<p class="currentPrice__price">${price} €/kWh</p>`;
@@ -25,10 +25,15 @@ const htmlCurrentPrice = (price) => {
   return htmlCode;
 };
 
-const printCurrentPrice = (hourlyPrices) => {
-  currentPCB = getCurrentPrice(hourlyPrices.pcb);
-  currentCYM = getCurrentPrice(hourlyPrices.cym);
+const printCurrentPrice = (hourlyPrices, isToday) => {
+  if (isToday) {
+    currentPCB = getCurrentPrice(hourlyPrices.pcb);
+    currentCYM = getCurrentPrice(hourlyPrices.cym);
 
-  currentPricePCB.innerHTML = htmlCurrentPrice(currentPCB);
-  currentPriceCYM.innerHTML = htmlCurrentPrice(currentCYM);
+    currentPricePCB.innerHTML = htmlCurrentPrice(currentPCB);
+    currentPriceCYM.innerHTML = htmlCurrentPrice(currentCYM);
+  } else {
+    currentPricePCB.innerHTML = "";
+    currentPriceCYM.innerHTML = "";
+  }
 };

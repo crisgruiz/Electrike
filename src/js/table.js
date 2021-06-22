@@ -2,12 +2,11 @@ const priceDate = document.querySelector(".js-date");
 
 //current date
 
-const printDate = () => {
+const printDate = (date) => {
   let htmlCode = "";
-  htmlCode += `<p class="date__text">Fecha: ${formatDate}</p>`;
+  htmlCode += `<p class="date__text">Fecha: ${date}</p>`;
   priceDate.innerHTML = htmlCode;
 };
-printDate();
 
 //Resume prices
 
@@ -65,7 +64,7 @@ const currentPriceItem = Array.prototype.slice.apply(
 );
 const tabs = document.getElementById("tabs");
 
-const handleClick = (e) => {
+const handleClickTable = (e) => {
   if (e.target.classList.contains("tabs__item")) {
     let i = tabsItem.indexOf(e.target);
     tabsItem.map((tab) => tab.classList.remove("active"));
@@ -81,4 +80,19 @@ const handleClick = (e) => {
   }
 };
 
-tabs.addEventListener("click", handleClick);
+tabs.addEventListener("click", handleClickTable);
+
+// const btnItem = Array.prototype.slice.apply(
+//   document.querySelectorAll(".btn__item")
+// );
+// const btn = document.getElementById("btn");
+
+// const handleClickDay = (e) => {
+//   if (e.target.classList.contains("btn__item")) {
+//     let i = btnItem.indexOf(e.target);
+//     btnItem.map((btn) => btn.classList.remove("active"));
+//     btnItem[i].classList.add("active");
+//   }
+// };
+
+// btn.addEventListener("click", handleClickDay);

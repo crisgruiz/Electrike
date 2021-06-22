@@ -1,22 +1,44 @@
 "use strict";
 
-//Current date
-let date = new Date();
-let currentDay = date.getDay();
-options = {
-  hour: "numeric",
-  minute: "numeric",
-  day: "numeric",
-  month: "2-digit",
-  year: "numeric",
+const getTwoDigitsNumber = (number) => {
+  number_str = number.toString();
+  if (number_str.length == 1) {
+    return "0" + number_str;
+  } else {
+    return number_str;
+  }
 };
-let IntlDate = new Intl.DateTimeFormat(
-  resolvedOptions.locale,
-  options
-).format();
 
-let formatDate = IntlDate.slice(0, 10).split("/").reverse().join("-");
-let fulltime = IntlDate.slice(11, 16);
+//Current date
+const dateAsString = (date) => {
+  const curr_day = date.getDate();
+  let curr_month = date.getMonth();
+  curr_month++;
+  const curr_year = date.getFullYear();
+  return (
+    curr_year +
+    "-" +
+    getTwoDigitsNumber(curr_month) +
+    "-" +
+    getTwoDigitsNumber(curr_day)
+  );
+};
+
+const todayDateAsString = () => dateAsString(new Date());
+
+const tomorrowDateAsString = () => {
+  const today = new Date();
+  const tomorrow = new Date(today);
+  tomorrow.setDate(tomorrow.getDate() + 1);
+  return dateAsString(tomorrow);
+};
+
+const hourAsString = () => {
+  const now = new Date();
+  const curr_hour = now.getHours();
+  let curr_minute = now.getMinutes();
+  return getTwoDigitsNumber(curr_hour) + ":" + getTwoDigitsNumber(curr_minute);
+};
 
 const infoDetailPCB = document.querySelector(".js-table");
 const hoursPCB = document.querySelector(".js-hourPCB");
@@ -31,12 +53,13 @@ const lowPriceCYM = document.querySelector(".js-lowCYM");
 const highPriceCYM = document.querySelector(".js-highCYM");
 
 //Llamada al API
-const getElectricityPrice = () => {
+const getElectricityPrice = (date) => {
   return fetch(
-    `https://electrike-otkzylkdbx.s3-eu-west-1.amazonaws.com/v2/${formatDate}.json`
+    `https://electrike-otkzylkdbx.s3-eu-west-1.amazonaws.com/v2/${date}.json`
   )
     .then((response) => response.json())
     .then((hourlyPrices) => {
+      printDate(date);
       paintHours(hourlyPrices.pcb, hoursPCB);
       paintHours(hourlyPrices.cym, hoursCYM);
       paintPrices(hourlyPrices.pcb, pricesPCB);
@@ -47,7 +70,7 @@ const getElectricityPrice = () => {
       paintMinPrice(hourlyPrices.cym, lowPriceCYM);
       paintMaxPrice(hourlyPrices.pcb, highPricePCB);
       paintMaxPrice(hourlyPrices.cym, highPriceCYM);
-      printCurrentPrice(hourlyPrices);
+      printCurrentPrice(hourlyPrices, date === todayDateAsString());
     })
     .catch(() => {
       return {
@@ -55,7 +78,15 @@ const getElectricityPrice = () => {
       };
     });
 };
-getElectricityPrice();
+getElectricityPrice(todayDateAsString());
+
+const nextDayBtn = document.querySelector(".js-nextDay");
+const currentDayBtn = document.querySelector(".js-currentDay");
+
+const showTomorrowPrices = () => getElectricityPrice(tomorrowDateAsString());
+const showCurrentPrices = () => getElectricityPrice(todayDateAsString());
+nextDayBtn.addEventListener("click", showTomorrowPrices);
+currentDayBtn.addEventListener("click", showCurrentPrices);
 
 //table with data
 
