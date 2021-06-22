@@ -52,13 +52,27 @@ const highPricePCB = document.querySelector(".js-highPCB");
 const lowPriceCYM = document.querySelector(".js-lowCYM");
 const highPriceCYM = document.querySelector(".js-highCYM");
 
+const priceContainer = document.querySelector(".js-notPrices");
+
+const showPricesNotFound = (date) => {
+  let htmlCode = "";
+  htmlCode += `Los datos para el día ${date} no están disponibles`;
+  priceContainer.innerHTML = htmlCode;
+};
+
+const deleteShowPricesNotFound = () => {
+  priceContainer.innerHTML = "";
+};
+
 //Llamada al API
 const getElectricityPrice = (date) => {
   return fetch(
     `https://electrike-otkzylkdbx.s3-eu-west-1.amazonaws.com/v2/${date}.json`
   )
-    .then((response) => response.json())
+    .then((response) => response.json(), showPricesNotFound(date))
     .then((hourlyPrices) => {
+      deleteShowPricesNotFound();
+      console.log(hourlyPrices);
       printDate(date);
       paintHours(hourlyPrices.pcb, hoursPCB);
       paintHours(hourlyPrices.cym, hoursCYM);
