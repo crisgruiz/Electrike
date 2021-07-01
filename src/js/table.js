@@ -81,18 +81,3 @@ const handleClickTable = (e) => {
 };
 
 tabs.addEventListener("click", handleClickTable);
-
-// const btnItem = Array.prototype.slice.apply(
-//   document.querySelectorAll(".btn__item")
-// );
-// const btn = document.getElementById("btn");
-
-// const handleClickDay = (e) => {
-//   if (e.target.classList.contains("btn__item")) {
-//     let i = btnItem.indexOf(e.target);
-//     btnItem.map((btn) => btn.classList.remove("active"));
-//     btnItem[i].classList.add("active");
-//   }
-// };
-
-// btn.addEventListener("click", handleClickDay);
