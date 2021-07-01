@@ -165,9 +165,9 @@ ul.tabs {
   border-top: none;
   text-align: center;
   width: 100%;
-  padding: 0 0 1rem;
+  padding: 0 0.15rem 0.2rem;
   @include tablet() {
-    padding: 0 1rem 1rem;
+    padding: 0 0.5rem 0.5rem;
   }
   &__title {
     color: $color-title;
