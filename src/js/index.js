@@ -69,10 +69,16 @@ const getElectricityPrice = (date) => {
   return fetch(
     `https://electrike-otkzylkdbx.s3-eu-west-1.amazonaws.com/v2/${date}.json`
   )
-    .then((response) => response.json(), showPricesNotFound(date))
+    .then((response) => {
+      if (response.ok) {
+        deleteShowPricesNotFound();
+        return response.json();
+      } else {
+        showPricesNotFound(date);
+      }
+    })
+
     .then((hourlyPrices) => {
-      deleteShowPricesNotFound();
-      console.log(hourlyPrices);
       printDate(date);
       paintHours(hourlyPrices.pcb, hoursPCB);
       paintHours(hourlyPrices.cym, hoursCYM);
